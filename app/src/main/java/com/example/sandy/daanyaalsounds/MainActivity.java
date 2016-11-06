@@ -12,51 +12,52 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        final MediaPlayer oh_fuckSoundMP = MediaPlayer.create(this, R.raw.oh_fuck);
+        final MainActivity main = this;
 
         Button oh_fuck = (Button) this.findViewById(R.id.oh_fuck);
 
         oh_fuck.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
+                MediaPlayer oh_fuckSoundMP = MediaPlayer.create(main, R.raw.oh_fuck);
                 oh_fuckSoundMP.start();
             };
         });
 
 
-        final MediaPlayer ballsSoundMP = MediaPlayer.create(this, R.raw.balls);
-
         Button balls = (Button) this.findViewById(R.id.balls);
 
         balls.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
+                MediaPlayer ballsSoundMP = MediaPlayer.create(main, R.raw.balls);
                 ballsSoundMP.start();
             };
         });
 
-        final MediaPlayer step_1SoundMP = MediaPlayer.create(this, R.raw.step_1);
 
         Button step_1 = (Button) this.findViewById(R.id.step_1);
 
         step_1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
+                MediaPlayer step_1SoundMP = MediaPlayer.create(main, R.raw.step_1);
                 step_1SoundMP.start();
-            };
+            }
+
+            ;
         });
 
-    final MediaPlayer aghSoundMP = MediaPlayer.create(this, R.raw.agh);
 
-    Button agh = (Button) this.findViewById(R.id.agh);
+        Button agh = (Button) this.findViewById(R.id.agh);
 
-    agh.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v){
-            aghSoundMP.start();
-        };
-    });
+        agh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MediaPlayer aghSoundMP = MediaPlayer.create(main, R.raw.agh);
+                aghSoundMP.start();
+            };
+        });
 
     }
 }
